@@ -17,6 +17,7 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     image = models.ImageField(upload_to='product_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    is_enabled = models.BooleanField(default=True) 
 
     def __str__(self):
         return self.name

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
 from django.utils import timezone
+from order.models import Order 
 
 class Payment(models.Model):
     METHOD_CHOICES = [
@@ -15,7 +16,7 @@ class Payment(models.Model):
         ('refunded', 'Refunded'),
     ]
 
-    order = models.ForeignKey('Order', on_delete=models.CASCADE, related_name='payments')
+    order = models.ForeignKey(Order,on_delete=models.PROTECT, related_name='payments')
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     method = models.CharField(max_length=10, choices=METHOD_CHOICES)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
