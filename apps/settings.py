@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'stockmovement',
     'payment',
     'product',
+    'profileuser',
 ]
 
 MIDDLEWARE = [
