@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'cart',
     'user',
     'order',
-    'stockmovement',
     'payment',
     'product',
     'profileuser',
