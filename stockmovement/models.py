@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
 from django.utils import timezone
+from product.models import Product
 
 class StockMovement(models.Model):
     REASON_CHOICES = [
@@ -10,7 +11,7 @@ class StockMovement(models.Model):
         ('return', 'Return'),
     ]
 
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='stock_movements')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='stock_movements')
     change = models.IntegerField(help_text='Positive for increase, negative for decrease')
     reason = models.CharField(max_length=20, choices=REASON_CHOICES)
     timestamp = models.DateTimeField(default=timezone.now)
