@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from product.models import Product  
 
+
 User = get_user_model()
 
 class Order(models.Model):
