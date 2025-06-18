@@ -20,7 +20,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     is_enabled = models.BooleanField(default=True) 
     
-    
+    # oop
     def __str__(self):
         return self.name
     
