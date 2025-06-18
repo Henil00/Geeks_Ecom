@@ -18,6 +18,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_enabled = models.BooleanField(default=True) 
-
+    quantity = models.PositiveIntegerField(default=0)
+    
     def __str__(self):
         return self.name
